@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello QuestionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/marjorie/rendu/MVC_my_quiz/my_quiz/src/Controller/QuestionController.php'|file_link(0) }}">src/Controller/QuestionController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/marjorie/rendu/MVC_my_quiz/my_quiz/templates/question/index.html.twig'|file_link(0) }}">templates/question/index.html.twig</a></code></li>
+    </ul>
+</div>
+
+<h1>Questions</h1>
+	{% if questions %}
+	<a href="/categorie">Go Back</a>
+	{% for question in questions %}
+	
+	
+	<div>{{ question.question }}</div>
+	<h6>{{ question.id}}</h6>
+	<p>{{ question.idCategorie}}</p>
+
+	{% endfor %}
+	{% else %}
+	<p>No questions to display</p>
+	{% endif %}
+
+
+
+
+{% endblock %}
