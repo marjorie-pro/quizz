@@ -1,18 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategorieController!{% endblock %}
+{% block title %}Categorie{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>Categorie</h1>
 
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ categorie.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ categorie.name }}</td>
+            </tr>
+        </tbody>
+    </table>
 
-	<h1>{{ question.id}}</h1>
-	<p>{{ question.question }}</p>
-	<p>{{ question.idCategorie}}</p>
+    <a href="{{ path('categorie_index') }}">back to list</a>
 
-	<a href="/categorie">Go Back</a>
+    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">edit</a>
 
+    {{ include('categorie/_delete_form.html.twig') }}
 {% endblock %}

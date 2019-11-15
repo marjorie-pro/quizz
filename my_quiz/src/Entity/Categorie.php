@@ -25,6 +25,7 @@ class Categorie
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     * @ORM\OneToMany(targetEntity="App\Entity\Question", mappedBy="categorie")
      */
     private $name;
 

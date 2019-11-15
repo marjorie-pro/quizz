@@ -25,6 +25,7 @@ class Reponse
      * @var int|null
      *
      * @ORM\Column(name="id_question", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity=Question::class)
      */
     private $idQuestion;
 
