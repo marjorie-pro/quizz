@@ -13,8 +13,10 @@
 	<p>{{ question.question }}</p>
 	<p>{{ question.idCategorie}}</p>
 
+	{# <p>{{ reponse.reponse}}</p> #}
+
 	{# <a href="/categorie/{{categorie.id}}" class="btn btn-dark">Show</a> #}
-	<a href="/categorie">Go Back</a>
+	<a href="/quiz">Go Back</a>
 	<button><a href="{{ question.id + 1 }}">next question</a></button>
 
 {% endblock %}

@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Categorie;
 use App\Entity\Question;
+use App\Entity\Reponse;
 
 class QuizController extends AbstractController
 {
@@ -20,22 +21,24 @@ class QuizController extends AbstractController
         // ]);
 
         $categories = $this->getDoctrine()->getRepository(Categorie::class)->findAll();
-    	
+
         return $this->render('quiz/index.html.twig',array('categories' => $categories));
     }
 
      /**
-     * @Route("/quiz/{id}/{idCategorie}", name="categorie_show")
+     * @Route("/quiz/{idCategorie}/{id}", name="categorie_show")
      */
-    public function show($id, $idCategorie){
-    	$questions = $this->getDoctrine()->getRepository(Question::class)->findOneById($id);
+    public function show($idCategorie, $id){
+    	$questions = $this->getDoctrine()->getRepository(Question::class)->findOneById($idCategorie);
 
-        $categories = $this->getDoctrine()->getRepository(Categorie::class)->findOneById($idCategorie);
+        $questions = $this->getDoctrine()->getRepository(Question::class)->findOneById($id);
+
+        // $reponses = $this->getDoctrine()->getRepository(Reponse::class)->findOneById($idQuestion);
 
     	return $this->render('quiz/show.html.twig', 
             array(
                 'question' => $questions,
-                'categories' => $categories,
+                // 'reponses' => $reponses,
             ));
     }
 }
