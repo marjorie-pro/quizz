@@ -21,11 +21,12 @@
 	{% for categorie in categories %}
 	<div>{{ categorie.name }}</div>
 	{# <a href="/quiz/{{categorie.id}}" class="btn btn-dark">Show</a> #}
-	<a href="/quiz/{{categorie.id}}/{{(categorie.id - 1)*10+1}}">{{categorie.name}}</a>
+	<a href="/quiz/{{categorie.id}}/{{(categorie.id - 1)*10+1}}" class="btn btn-dark">Commencer</a>
 
 	{# <a href="/question" class="btn btn-dark">Voir questions</a> #}
 	{# <a href="{{ path('question', {'id': question.id}) }}" class="btn btn-dark">voir les questions</a> #}
 	{% endfor %}
+	<br>
 	{% else %}
 	<p>No categories to display</p>
 	{% endif %}

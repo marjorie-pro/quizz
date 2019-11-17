@@ -16,7 +16,11 @@
 	{# <p>{{ reponse.reponse}}</p> #}
 
 	{# <a href="/categorie/{{categorie.id}}" class="btn btn-dark">Show</a> #}
+	{# {% if question.idcategorie == (question.idcategorie - 1)*10+1%} #}
+    	
+		<a href="{{ question.id + 1 }}" class="btn btn-outline-primary">next question</a><br>
+
+    {# {% endif %} #}
 	<a href="/quiz">Go Back</a>
-	<button><a href="{{ question.id + 1 }}">next question</a></button>
 
 {% endblock %}
